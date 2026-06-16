@@ -16,9 +16,12 @@
 
 ## Overview
 
-The **Developers Edition** provides the core Sertainty UXP libraries for building data-centric protection directly into your own applications. It is intended for the developer community to evaluate, prototype, and integrate UXP Technology.
+> **Legacy versions sunset.** As of v5.0, Sertainty v4 and all earlier releases are end-of-life — no longer maintained, supported, or receiving updates or fixes. We recommend all users migrate to v5.0 or later.
+
+> The **Developers Edition** provides the core Sertainty UXP libraries for building data-centric protection directly into your own applications. It is intended for the developer community to evaluate, prototype, and integrate UXP Technology.
 
 > **Downloads are open — usage is licensed.** Anyone may download the SDK. Running it requires a separate Sertainty license (evaluation, development, or production). See [Licensing](#licensing).
+
 
 ## What's included
 
