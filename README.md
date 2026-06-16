@@ -6,7 +6,7 @@
 
 ### Embed access controls directly into your data —<br>protection that travels with the file, everywhere it goes.
 
-[![Latest release](https://img.shields.io/github/v/release/Sertainty/Developer-V5?style=for-the-badge&color=4f46e5&label=Latest%20Release)](https://github.com/Sertainty/Developer-V5/releases/latest)
+[![Latest release](https://img.shields.io/badge/Latest%20Release-4f46e5?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Sertainty/Developer-V5/releases/latest)
 [![Knowledge Base](https://img.shields.io/badge/Knowledge%20Base-4f46e5?style=for-the-badge&logo=readthedocs&logoColor=white)](https://sertainty.github.io/knowledge-base/)
 [![Website](https://img.shields.io/badge/Website-sertainty.com-1e2327?style=for-the-badge&logo=googlechrome&logoColor=white)](https://www.sertainty.com/)
 
