@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sertainty Developer v5.0 — Data Sheet</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400&family=VT323&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink:     #11161d;
+    --ink-2:   #3a4757;
+    --ink-3:   #6b7a8d;
+    --rule:    #dde2e9;
+    --surface: #f4f6f9;
+    --white:   #ffffff;
+    --peach:   #F0846A;
+    --teal:    #37B19C;
+    --yellow:  #F2BD52;
+    --green:   #B7F184;
+    --blue:    #579DD1;
+    --purple:  #6D3E89;
+    --pink:    #EE2F53;
+  }
+
+  html, body {
+    background: #e6e8ec;
+    font-family: 'Roboto', Arial, sans-serif;
+    color: var(--ink);
+    font-size: 9pt;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    padding: 0;
+  }
+  @media screen and (min-height: 1140px) { body { padding: 0.4in 0; } }
+
+  .mono { font-family: 'VT323', 'Courier New', monospace; }
+
+  .page {
+    width: 8.5in;
+    min-height: 11in;
+    margin: 0 auto;
+    background: var(--white);
+    box-shadow: 0 4px 28px rgba(17,22,29,0.16);
+    display: grid;
+    grid-template-rows: 0.86in 1fr 0.42in;
+    grid-template-columns: 2.45in 1fr;
+    overflow: hidden;
+  }
+
+  /* HEADER */
+  .header {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0.42in;
+    border-bottom: 2px solid var(--pink);
+  }
+  .header img { height: 0.34in; display: block; }
+  .header-right { text-align: right; }
+  .doc-kicker {
+    font-size: 8pt; font-weight: 700; letter-spacing: 0.13em;
+    text-transform: uppercase; color: var(--teal);
+  }
+  .doc-title { font-size: 11pt; font-weight: 900; color: var(--ink); letter-spacing: -0.01em; }
+  .doc-sub { font-size: 7.5pt; color: var(--ink-3); font-weight: 400; margin-top: 1px; }
+
+  /* SIDEBAR */
+  .sidebar {
+    grid-column: 1; grid-row: 2;
+    background: var(--surface);
+    border-right: 1px solid var(--rule);
+    padding: 0.22in 0.24in;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+
+  .version-row { display: flex; align-items: center; justify-content: space-between; }
+  .version-pill {
+    display: inline-flex; align-items: center;
+    font-size: 9pt; font-weight: 900; padding: 5px 15px; border-radius: 20px;
+    background: var(--pink); color: var(--white); letter-spacing: 0.06em;
+  }
+  .version-date { font-size: 7.5pt; color: var(--ink-3); font-weight: 500; }
+
+  .sb-block {
+    background: var(--white); border: 1px solid var(--rule);
+    border-radius: 9px; padding: 10px 12px;
+  }
+  .section-label {
+    font-size: 7pt; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--peach);
+    margin-bottom: 7px; padding-bottom: 5px; border-bottom: 1px solid var(--rule);
+  }
+  .kv { display: flex; flex-direction: column; gap: 6px; }
+  .kv-row { display: flex; flex-direction: column; gap: 1px; }
+  .kv-row .k {
+    display: flex; align-items: center; gap: 7px;
+    font-size: 8pt; font-weight: 700; color: var(--ink);
+  }
+  .kv-row .k::before {
+    content: ''; width: 6px; height: 6px; border-radius: 2px;
+    background: var(--teal); flex-shrink: 0;
+  }
+  .kv-row .v { font-size: 7.5pt; color: var(--ink-3); padding-left: 13px; line-height: 1.4; }
+
+  .compliance-strip { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; }
+  .chip {
+    font-size: 6.5pt; font-weight: 700; letter-spacing: 0.04em;
+    padding: 3px 8px; border-radius: 5px; background: #e3f4f0; color: #1a7a6c;
+    white-space: nowrap;
+  }
+  .chip.pk { background: #fde7eb; color: #c0223e; }
+  .chip.pe { background: #fdeae4; color: #b65437; }
+
+  .migrate-list { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+  .migrate-list li {
+    font-size: 7.5pt; color: var(--ink-2); line-height: 1.4;
+    padding-left: 13px; position: relative;
+  }
+  .migrate-list li::before {
+    content: '→'; position: absolute; left: 0; top: 0;
+    color: var(--peach); font-weight: 700;
+  }
+  .migrate-list code {
+    font-family: 'VT323', monospace; font-size: 9pt; color: var(--purple);
+    background: #f2eef6; padding: 0 3px; border-radius: 3px;
+  }
+
+  .contact { font-size: 7pt; color: var(--ink-2); line-height: 1.55; }
+  .contact a { color: var(--teal); text-decoration: none; }
+  .contact .ck {
+    font-size: 6.5pt; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--ink-3); display: block; margin-top: 6px;
+  }
+  .contact .ck:first-child { margin-top: 0; }
+
+  /* MAIN */
+  .main {
+    grid-column: 2; grid-row: 2;
+    padding: 0.26in 0.4in 0.12in 0.3in;
+    display: flex; flex-direction: column; gap: 7px;
+  }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, #15202b 0%, #18283a 55%, #102028 100%);
+    border-radius: 11px; padding: 10px 22px; color: var(--white);
+    position: relative; overflow: hidden;
+  }
+  .hero-eyebrow {
+    font-size: 7pt; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase;
+    color: rgba(255,255,255,0.5); margin-bottom: 7px;
+  }
+  .hero h1 {
+    font-size: 19pt; font-weight: 900; font-style: italic; line-height: 1.12;
+    margin-bottom: 6px; position: relative; z-index: 1; max-width: 100%; white-space: nowrap;
+  }
+  .hero p {
+    font-size: 8.5pt; color: rgba(255,255,255,0.8); line-height: 1.55;
+    position: relative; z-index: 1; max-width: 94%;
+  }
+  .hero p strong { color: #fff; font-weight: 700; }
+  .hero-badges { display: flex; gap: 6px; margin-top: 11px; flex-wrap: wrap; position: relative; z-index: 1; }
+  .badge {
+    font-size: 6.5pt; font-weight: 500; letter-spacing: 0.03em; padding: 4px 10px;
+    border-radius: 20px; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.92);
+    border: 0.5px solid rgba(255,255,255,0.2);
+  }
+
+  .block-title {
+    font-size: 7.5pt; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink); margin-bottom: 5px; display: flex; align-items: center; gap: 9px;
+  }
+  .block-title::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+
+  /* CORE OBJECTS */
+  .objects { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 9px; }
+  .obj {
+    border: 1px solid var(--rule); border-radius: 9px; padding: 9px 11px 10px;
+    position: relative; background: var(--white);
+  }
+  .obj::before {
+    content: ''; position: absolute; top: 0; left: 14px; right: 14px; height: 3px;
+    border-radius: 0 0 3px 3px;
+  }
+  .obj.o1::before { background: var(--pink); }
+  .obj.o2::before { background: var(--teal); }
+  .obj.o3::before { background: var(--blue); }
+  .obj .otag {
+    font-family: 'VT323', monospace; font-size: 10pt; font-weight: 400;
+    margin-bottom: 3px; display: inline-block;
+  }
+  .obj.o1 .otag { color: var(--pink); }
+  .obj.o2 .otag { color: var(--teal); }
+  .obj.o3 .otag { color: var(--blue); }
+  .obj h3 { font-size: 9pt; font-weight: 900; color: var(--ink); margin-bottom: 4px; }
+  .obj p { font-size: 7.5pt; color: var(--ink-2); line-height: 1.45; }
+
+  /* QUICKSTART */
+  .qs-wrap { display: flex; align-items: stretch; gap: 0; }
+  .qs {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; flex: 1;
+  }
+  .qs-step {
+    border: 1px solid var(--rule); border-radius: 9px; padding: 8px 10px 9px;
+    background: var(--surface); position: relative;
+  }
+  .qs-num {
+    width: 21px; height: 21px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--pink), var(--peach));
+    color: #fff; font-size: 8.5pt; font-weight: 900;
+    display: flex; align-items: center; justify-content: center; margin-bottom: 7px;
+  }
+  .qs-step h4 { font-size: 8pt; font-weight: 700; color: var(--ink); margin-bottom: 3px; line-height: 1.2; }
+  .qs-step p { font-size: 7pt; color: var(--ink-3); line-height: 1.4; }
+  .qs-step .t { font-size: 6.5pt; font-weight: 700; color: var(--teal); margin-top: 5px; display: block; }
+
+  /* CAPABILITIES */
+  .caps { display: flex; gap: 22px; align-items: flex-start; }
+  .cap-col { flex: 1; display: flex; flex-direction: column; gap: 9px; }
+  .cap { display: flex; gap: 10px; align-items: flex-start; }
+  .cap-dot {
+    width: 9px; height: 9px; border-radius: 2px; margin-top: 3px; flex-shrink: 0;
+    transform: rotate(45deg);
+  }
+  .cap-col:first-child .cap:nth-child(1) .cap-dot { background: var(--purple); }
+  .cap-col:first-child .cap:nth-child(2) .cap-dot { background: var(--blue); }
+  .cap-col:first-child .cap:nth-child(3) .cap-dot { background: var(--green); }
+  .cap-col:first-child .cap:nth-child(4) .cap-dot { background: var(--pink); }
+  .cap-col:last-child .cap:nth-child(1) .cap-dot { background: var(--pink); }
+  .cap-col:last-child .cap:nth-child(2) .cap-dot { background: var(--yellow); }
+  .cap-col:last-child .cap:nth-child(3) .cap-dot { background: var(--teal); }
+  .cap-col:last-child .cap:nth-child(4) .cap-dot { background: var(--blue); }
+  .cap-col:last-child .cap:nth-child(5) .cap-dot { background: var(--purple); }
+  .cap h4 { font-size: 8pt; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
+  .cap p { font-size: 7.5pt; color: var(--ink-2); line-height: 1.32; hyphens: none; -webkit-hyphens: none; overflow-wrap: normal; }
+  .cap p + p { margin-top: 6px; }
+  .cap ul { font-size: 7.5pt; color: var(--ink-2); line-height: 1.4; list-style: disc; padding-left: 1.05em; margin-top: 2px; }
+  .cap ul li { margin-bottom: 1px; }
+
+  /* FOOTER */
+  .footer {
+    grid-column: 1 / -1; grid-row: 3; border-top: 1px solid var(--rule);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 0.42in; font-size: 7pt; color: var(--ink-3);
+  }
+  .footer .tags { display: flex; align-items: center; gap: 8px; }
+
+  @media print {
+    html, body { background: #fff; padding: 0; }
+    .page { box-shadow: none; margin: 0; }
+    @page { size: letter; margin: 0; }
+  }
+</style>
+</head>
+<body>
+
+<template id="__bundler_thumbnail">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <rect width="100" height="100" fill="#0b1220"/>
+    <g transform="translate(50 50)">
+      <path d="M0 -22 L19 -11 L19 11 L0 22 L-19 11 L-19 -11 Z" fill="none" stroke="#e23b6d" stroke-width="3"/>
+      <circle r="6" fill="#19b9a6"/>
+    </g>
+    <text x="50" y="86" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="700" fill="#ffffff">UXP v5.0</text>
+  </svg>
+</template>
+
+<div class="page">
+
+  <header class="header">
+    <img src="data:image/png;base64,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" alt="Sertainty">
+    <div class="header-right">
+      <div class="doc-kicker">Developer Data Sheet</div>
+      <div class="doc-title">Sertainty Developer v5.0</div>
+      <div class="doc-sub">Core Framework Reference · 2026 Edition</div>
+    </div>
+  </header>
+
+  <aside class="sidebar">
+
+    <div class="version-row">
+      <span class="version-pill">v5.0.0</span>
+      <span class="version-date">Released Q2 2026</span>
+    </div>
+
+    <div class="sb-block">
+      <div class="section-label">Platforms &amp; APIs</div>
+      <div class="kv">
+        <div class="kv-row"><span class="k">Linux</span><span class="v">x64 · RHEL, Ubuntu</span></div>
+        <div class="kv-row"><span class="k">Windows</span><span class="v">x64 · code-signed binaries</span></div>
+        <div class="kv-row"><span class="k">macOS</span><span class="v">Apple Silicon (ARM64) only</span></div>
+        <div class="kv-row"><span class="k">Languages</span><span class="v">UXL · C · C++</span></div>
+        <div class="kv-row"><span class="k">Roadmap</span><span class="v">C# · iOS · Android · Industrial IoT</span></div>
+      </div>
+    </div>
+
+    <div class="sb-block">
+      <div class="section-label">Crypto &amp; Compliance</div>
+      <div class="kv">
+        <div class="kv-row"><span class="k">AES-256</span><span class="v">FIPS 140-3 validated · CMVP certificate</span></div>
+        <div class="kv-row"><span class="k">Resilience</span><span class="v">Dynamic scheme — quantum &amp; AI resistant, no PKI</span></div>
+      </div>
+      <div class="compliance-strip">
+        <span class="chip">FIPS 140-3</span>
+        <span class="chip pe">ECCN 5D002</span>
+        <span class="chip pk">AES-256</span>
+        <span class="chip">No PKI</span>
+      </div>
+    </div>
+
+    <div class="sb-block">
+      <div class="section-label">Migrating to V5.0</div>
+      <ul class="migrate-list">
+        <li>New license required — V4 licenses do not load</li>
+        <li>Sertainty <strong>Agent removed</strong></li>
+        <li>API signatures changed — see release notes for details</li>
+        <li>Global SSO &amp; SMS-via-email removed</li>
+        <li>Pre-5.0 objects still open; 5.0 objects won't open in V4</li>
+      </ul>
+    </div>
+
+    <div class="sb-block contact">
+      <div class="section-label">Contact &amp; Links</div>
+      <span class="ck">Address</span>
+      51 Century Blvd, Suite 100<br>Nashville, TN 37214
+      <span class="ck">Web</span>
+      <a href="https://www.sertainty.com">www.sertainty.com</a>
+      <span class="ck">Releases</span>
+      <a href="https://github.com/Sertainty">github.com/Sertainty</a>
+    </div>
+
+  </aside>
+
+  <main class="main">
+
+    <div class="hero">
+      <div class="hero-eyebrow">active · intelligent · data</div>
+      <h1>Data that protects itself</h1>
+      <p>The Sertainty UXP Technology embeds <strong>active intelligence</strong> inside a protected object, preventing unauthorized access no matter where the data resides. Unlike conventional encryption, it constructs dynamic protection schemes that resist quantum systems and AI data-mining engines — securing data at rest, in flight, and in process.</p>
+      <div class="hero-badges">
+        <span class="badge">Active Intelligence</span>
+        <span class="badge">Self-Protecting Files</span>
+        <span class="badge">Zero Trust Architecture</span>
+        <span class="badge">Offline by Default</span>
+      </div>
+    </div>
+
+    <div>
+      <div class="block-title">Three core objects</div>
+      <div class="objects">
+        <div class="obj o1">
+          <span class="otag mono">UXP Identity · .iic</span>
+          <h3>Who can open</h3>
+          <p>Authenticates a user, machine, or workgroup via challenge/response. Your credentials — treat like a private key, never share.</p>
+        </div>
+        <div class="obj o2">
+          <span class="otag mono">UXP Object · .uxp</span>
+          <h3>What is protected</h3>
+          <p>A self-enforcing container holding files, folders, or SQL data behind an embedded policy. The payload — safe to share anywhere.</p>
+        </div>
+        <div class="obj o3">
+          <span class="otag mono">SmartMessage</span>
+          <h3>Peer-to-peer payload</h3>
+          <p>A protected in-memory or on-disk message for direct exchange between identities — no containing file required.</p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="block-title">First round-trip in ~60 minutes</div>
+      <div class="qs-wrap">
+        <div class="qs">
+          <div class="qs-step">
+            <div class="qs-num">1</div>
+            <h4>Install &amp; license</h4>
+            <p>Drop <span class="mono" style="color:var(--purple)">sertainty.lic</span> in the standard location.</p>
+            <span class="t">~5 min</span>
+          </div>
+          <div class="qs-step">
+            <div class="qs-num">2</div>
+            <h4>Create an Identity</h4>
+            <p>Define challenge pairs, privileges &amp; optional machine ID.</p>
+            <span class="t">~10 min</span>
+          </div>
+          <div class="qs-step">
+            <div class="qs-num">3</div>
+            <h4>Package a UXP</h4>
+            <p>Seal files with access rules, time-locks &amp; geo-fences.</p>
+            <span class="t">~10 min</span>
+          </div>
+          <div class="qs-step">
+            <div class="qs-num">4</div>
+            <h4>Authenticate &amp; extract</h4>
+            <p>Satisfy the challenge loop; audit events written automatically.</p>
+            <span class="t">~15 min</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="flex:1; display:flex; flex-direction:column;">
+      <div class="block-title">Key capabilities</div>
+      <div class="caps">
+        <div class="cap-col">
+          <div class="cap"><span class="cap-dot"></span><div><h4>Selective &amp; partial access</h4><ul><li><em>Who</em> can read what — selective access governs page-level reach.</li><li><em>How much</em> is unprotected — only the portion in use, at runtime.</li><li><em>How long</em> plaintext exists — decrypted just in time, released after use.</li></ul></div></div>
+          <div class="cap"><span class="cap-dot"></span><div><h4>Active Intelligence, Active Authorization</h4><p>Every open triggers a fresh evaluation against the embedded rules: identity, time, location, device, and prior failures.</p><p>Access is never unconditional.</p></div></div>
+          <div class="cap"><span class="cap-dot"></span><div><h4>UXP SQL</h4><p>SQLite-compatible relational data lives inside the UXP, with every query gated by the same Identity and rules that protect the file payload.</p></div></div>
+          <div class="cap"><span class="cap-dot"></span><div><h4>Identity embedded at creation</h4><p>No external key store. The access policy is compiled into the UXP object at creation and travels with it.</p></div></div>
+        </div>
+        <div class="cap-col">
+          <div class="cap"><span class="cap-dot"></span><div><h4>Offline by default. Airgap ready.</h4><ul><li>No server, key manager, or network is needed for access decisions.</li><li>UXP runs identically in connected and airgapped environments.</li><li>Network features are opt-in.</li></ul></div></div>
+          <div class="cap"><span class="cap-dot"></span><div><h4>Event log &amp; SIEM</h4><p>Logging is a preference set by the data owner. When the UXP is online, access events can be sent to a server through several outbound methods, ready for ingest by a SIEM or other monitoring tool. Storing the event log inside the UXP itself is also an option.</p></div></div>
+          <div class="cap"><span class="cap-dot"></span><div><h4>Self-destruct &amp; Alternate Reality</h4><p>Configurable defensive responses when access conditions fail: shred the contents, expose decoy data, or revoke the file silently.</p></div></div>
+          <div class="cap"><span class="cap-dot"></span><div><h4>Delegate access without re-protecting</h4><p>Authorize and revoke users dynamically through the Delegate Service, without rebuilding or redistributing the UXP.</p></div></div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <span>© 2026 Sertainty Corporation · 51 Century Blvd, Suite 100, Nashville, TN</span>
+    <span class="tags">
+      <span class="chip pk">SDK v5.0</span>
+      <span class="chip">FIPS 140-3</span>
+      <span class="chip pe">ECCN 5D002</span>
+    </span>
+  </footer>
+
+</div>
+
+</body>
+</html>
