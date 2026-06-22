@@ -8,6 +8,7 @@
 
 [![Latest release](https://img.shields.io/badge/Latest%20Release-4f46e5?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Sertainty/Developer-V5/releases/latest)
 [![Knowledge Base](https://img.shields.io/badge/Knowledge%20Base-4f46e5?style=for-the-badge&logo=readthedocs&logoColor=white)](https://sertainty.github.io/knowledge-base/)
+[![Docs](https://img.shields.io/badge/Docs-Read-334155?style=for-the-badge&logo=readthedocs&logoColor=white)](https://sertainty.github.io/docs/)
 [![Data Sheet](https://img.shields.io/badge/Data%20Sheet-View-0e9b8d?style=for-the-badge&logo=readthedocs&logoColor=white)](https://sertainty.github.io/Developer-V5/)
 [![Data Sheet PDF](https://img.shields.io/badge/Data%20Sheet-PDF-e8394c?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://sertainty.github.io/Developer-V5/Sertainty-Developer-v5.0-DataSheet.pdf)
 [![Website](https://img.shields.io/badge/Website-sertainty.com-1e2327?style=for-the-badge&logo=googlechrome&logoColor=white)](https://www.sertainty.com/)
@@ -20,10 +21,9 @@
 
 > **Legacy versions sunset.** As of v5.0, Sertainty v4 and all earlier releases are end-of-life — no longer maintained, supported, or receiving updates or fixes. We recommend all users migrate to v5.0 or later.
 
-> The **Developers Edition** provides the core Sertainty UXP libraries for building data-centric protection directly into your own applications. It is intended for the developer community to evaluate, prototype, and integrate UXP Technology.
+The **Developers Edition** provides the core Sertainty UXP libraries for building data-centric protection directly into your own applications. It is intended for the developer community to evaluate, prototype, and integrate UXP Technology.
 
 > **Downloads are open — usage is licensed.** Anyone may download the SDK. Running it requires a separate Sertainty license (evaluation, development, or production). See [Licensing](#licensing).
-
 
 ## What's included
 
@@ -69,8 +69,10 @@ Compare the result against the checksum published in the release notes.
 ## Documentation
 
 - **Knowledge Base:** https://sertainty.github.io/knowledge-base/
-- **Sertainty Technology Guide:** included with each release <!-- TODO: add direct link if hosted -->
-- **API reference:** <!-- TODO: add link -->
+- **Data Sheet (web):** https://sertainty.github.io/Developer-V5/
+- **Data Sheet (PDF):** https://sertainty.github.io/Developer-V5/Sertainty-Developer-v5.0-DataSheet.pdf
+- **Documentation:** https://sertainty.github.io/docs/
+- **Technology Guide:** https://sertainty.github.io/docs/technology-guide/
 
 ## Licensing
 
@@ -94,5 +96,8 @@ See the [`LICENSE`](./LICENSE) / EULA file for full terms. <!-- TODO: add an EUL
 <div align="center">
 
 © Sertainty · UXP Technology · Protect your data at the source.
+
+</div>
+our data at the source.
 
 </div>
